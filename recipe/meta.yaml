@@ -13,7 +13,9 @@ source:
       - Cmake.patch
 
 build:
-  number: 0
+  number: 1
+  run_exports:
+    - {{ pin_subpackage('libdiscid', max_pin='x.x') }}
 
 requirements:
   build:
