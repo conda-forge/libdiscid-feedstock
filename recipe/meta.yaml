@@ -1,5 +1,5 @@
 {% set name = "libdiscid" %}
-{% set version = "0.6.2" %}
+{% set version = "0.6.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,12 @@ package:
 
 source:
   url: https://github.com/metabrainz/libdiscid/archive/v{{ version }}.tar.gz
-  sha256: a9b73b030603ce707941a3aab4f46649fa5029025e7e2bfbbe0c3c93a86d7b20
+  sha256: df7b19a125e31bb15bb0cebf338fb7a44cc20b76adf5de1798315a2056ff2d5a
   patches:
-      - 0001-Update-disc_win32.c.patch  # [win]
-      - Cmake.patch
+    - 0001-Update-disc_win32.c.patch    # [win]
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage('libdiscid', max_pin='x.x') }}
 
@@ -22,7 +21,7 @@ requirements:
     - ninja  # [win]
     - make  # [not win]
     - cmake
-    -  {{ compiler('c') }}
+    - {{ compiler('c') }}
     - m2-patch  # [win]
 test:
   commands:
