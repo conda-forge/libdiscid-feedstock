@@ -13,6 +13,9 @@ Development: https://github.com/metabrainz/libdiscid
 
 Documentation: https://musicbrainz.org/doc/libdiscid
 
+`libdiscid` is a C library for creating MusicBrainz and freedb disc IDs from audio CDs. It reads a CD's table of contents (TOC) and generates an identifier which can be used to lookup the CD at MusicBrainz. Additionally, it provides a submission URL for adding the disc ID to the database and gathers ISRCs and the MCN (=UPC/EAN) from disc.
+
+
 Current build status
 ====================
 
