@@ -5,7 +5,7 @@ mkdir build
 cd build
 
 :: Configure using the CMakeFiles
-cmake -G "Ninja" -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" -DCMAKE_BUILD_TYPE:STRING=Release ..
+cmake -G "Ninja" -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE:STRING=Release ..
 if errorlevel 1 exit 1
 
 :: Build!
