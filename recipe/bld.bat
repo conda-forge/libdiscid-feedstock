@@ -21,9 +21,9 @@ if errorlevel 1 exit 1
 nmake
 if errorlevel 1 exit 1
 
-nmake discid discirsc
+nmake discid discisrc
 if errorlevel 1 exit 1
 :: Install!
 nmake install
-nmake install discid discirsc
+nmake install discid discisrc
 if errorlevel 1 exit
