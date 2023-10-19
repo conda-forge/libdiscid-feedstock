@@ -24,7 +24,7 @@ if errorlevel 1 exit 1
 nmake discid discisrc
 if errorlevel 1 exit 1
 :: Install!
-nmake install
+nmake install VERBOSE=1
 nmake discid DESTDIR="%BINDIR%" VERBOSE=1
 nmake discisrc DESTDIR="Library/bin" VERBOSE=1
 if errorlevel 1 exit
