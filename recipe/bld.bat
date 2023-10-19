@@ -25,5 +25,5 @@ nmake discid discisrc
 if errorlevel 1 exit 1
 :: Install!
 nmake install VERBOSE=1
-mv Library/lib/discid.dll Library/bin/discid.dll
+mv  %LIBRARY_LIB%\discid.dll %LIBRARY_BIN%\discid.dll -v 
 if errorlevel 1 exit
