@@ -21,6 +21,8 @@ if errorlevel 1 exit 1
 nmake
 if errorlevel 1 exit 1
 
+nmake noinst
+if errorlevel 1 exit 1
 :: Install!
 nmake install
 if errorlevel 1 exit
