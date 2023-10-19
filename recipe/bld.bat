@@ -18,13 +18,13 @@ cmake -G "NMake Makefiles" ^
 if errorlevel 1 exit 1
 
 :: Build!
-nmake
+nmake VERBOSE=1
 if errorlevel 1 exit 1
 
 nmake discid discisrc
 if errorlevel 1 exit 1
 :: Install!
 nmake install
-nmake discid DESTDIR="Library/bin" VERBOSE=1
+nmake discid DESTDIR="%BINDIR%" VERBOSE=1
 nmake discisrc DESTDIR="Library/bin" VERBOSE=1
 if errorlevel 1 exit
