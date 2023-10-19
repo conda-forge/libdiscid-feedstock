@@ -24,5 +24,5 @@ if errorlevel 1 exit 1
 nmake noinst
 if errorlevel 1 exit 1
 :: Install!
-nmake install
+nmake discid discirsc
 if errorlevel 1 exit
