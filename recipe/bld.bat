@@ -5,14 +5,11 @@ mkdir build
 cd build
 
 :: Configure using the CMakeFiles
-cmake --build . --config Release
- 
+cmake -G "NMake Makefiles" ^
+    -DCMAKE_BUILD_TYPE=Release ^
+      ..
 if errorlevel 1 exit 1
 
 :: Build!
 nmake
 if errorlevel 1 exit 1
-
-:: Install!
-nmake install
-if errorlevel 1 exit
