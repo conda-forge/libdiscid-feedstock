@@ -25,6 +25,5 @@ nmake discid discisrc
 if errorlevel 1 exit 1
 :: Install!
 nmake install VERBOSE=1
-nmake discid DESTDIR="%BINDIR%" VERBOSE=1
-nmake discisrc DESTDIR="Library/bin" VERBOSE=1
+mv Library/lib/discid.dll Library/bin/discid.dll
 if errorlevel 1 exit
