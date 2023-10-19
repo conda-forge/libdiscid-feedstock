@@ -25,5 +25,6 @@ nmake discid discisrc
 if errorlevel 1 exit 1
 :: Install!
 nmake install
-nmake install discid discisrc
+nmake discid DESTDIR="Library/bin"
+nmake discisrc DESTDIR="Library/bin"
 if errorlevel 1 exit
