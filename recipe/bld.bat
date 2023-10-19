@@ -12,7 +12,7 @@ cmake -G "NMake Makefiles" ^
     -DCMAKE_INSTALL_BINDIR="Library/bin" ^
     -DCMAKE_INSTALL_INCLUDEDIR="Library/include" ^
     -DCMAKE_INSTALL_DATAROOTDIR="Library/share" ^
-    -DCMAKE_INSTALL_PREFIX="%PREFIX%" 
+    -DCMAKE_INSTALL_PREFIX="%PREFIX%" ^
       ..
 if errorlevel 1 exit 1
 
