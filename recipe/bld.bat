@@ -5,8 +5,8 @@ mkdir build
 cd build
 
 :: Configure using the CMakeFiles
-cmake ..
-
+cmake -G "NMake Makefiles" 
+      ..
 if errorlevel 1 exit 1
 
 :: Build!
