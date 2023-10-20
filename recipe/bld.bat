@@ -14,7 +14,6 @@ if errorlevel 1 exit 1
 ninja -v
 if errorlevel 1 exit 1
 
-nmake discid discisrc
 if errorlevel 1 exit 1
 :: Install!
 ninja install -v
