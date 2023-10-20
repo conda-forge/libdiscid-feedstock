@@ -11,12 +11,12 @@ if errorlevel 1 exit 1
 if errorlevel 1 exit 1
 
 :: Build!
-ninja VERBOSE=1
+ninja -v
 if errorlevel 1 exit 1
 
 nmake discid discisrc
 if errorlevel 1 exit 1
 :: Install!
-ninja install VERBOSE=1
+ninja install -v
 mv  %LIBRARY_LIB%\discid.dll %LIBRARY_BIN%\discid.dll -v 
 if errorlevel 1 exit
