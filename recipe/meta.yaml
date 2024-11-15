@@ -22,6 +22,7 @@ requirements:
     - make  # [not win]
     - cmake
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - m2-patch  # [win]
 test:
   commands:
