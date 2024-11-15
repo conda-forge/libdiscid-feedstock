@@ -12,7 +12,7 @@ source:
     - 0001-Update-disc_win32.c.patch    # [win]
 
 build:
-  number: 4
+  number: 5
   run_exports:
     - {{ pin_subpackage('libdiscid', max_pin='x.x') }}
 
