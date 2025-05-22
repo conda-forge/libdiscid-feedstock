@@ -1,5 +1,5 @@
 {% set name = "libdiscid" %}
-{% set version = "0.6.4" %}
+{% set version = "0.6.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/metabrainz/libdiscid/archive/v{{ version }}.tar.gz
-  sha256: c581baeabaf6e410398005645d66acaaa41ff2cab272c267a2d6839e41486ebb
+  sha256: 1ecc4280b88d6a65c7fcde695f991ac28e3b54ce41d83ab3fffddfb3d5764a11
   patches:
     - 0001-Update-disc_win32.c.patch    # [win]
 
 build:
-  number: 6
+  number: 0
   run_exports:
     - {{ pin_subpackage('libdiscid', max_pin='x.x') }}
 
@@ -43,7 +43,7 @@ about:
   doc_url: https://musicbrainz.org/doc/libdiscid
   description: |
     `libdiscid` is a C library for creating MusicBrainz and freedb disc IDs from audio CDs. It reads a CD's table of contents (TOC) and generates an identifier which can be used to lookup the CD at MusicBrainz. Additionally, it provides a submission URL for adding the disc ID to the database and gathers ISRCs and the MCN (=UPC/EAN) from disc.
-  
+
 extra:
   recipe-maintainers:
     - HeavyTony2
