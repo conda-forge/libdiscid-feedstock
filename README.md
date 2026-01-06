@@ -27,7 +27,9 @@ Current build status
       <details>
         <summary>
           <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15103&branchName=main">
-            <
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libdiscid-feedstock?branchName=main">
+          </a>
+        </summary>
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
