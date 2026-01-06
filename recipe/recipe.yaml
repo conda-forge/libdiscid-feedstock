@@ -29,10 +29,6 @@ requirements:
     - ${{ stdlib("c") }}
     - if: win
       then: m2-patch
-    - if: osx and x86_64
-      then: macosx_deployment_target =15.6
-    - if: osx and arm64
-      then: macosx_deployment_target_osx-arm64 =15.6
   run_exports:
     - ${{ pin_subpackage('libdiscid', upper_bound='x.x') }}
 
