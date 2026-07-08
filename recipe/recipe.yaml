@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: libdiscid
-  version: 0.6.5
+  version: "0.7.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,20 +10,19 @@ package:
 
 source:
   url: https://github.com/metabrainz/libdiscid/archive/v${{ version }}.tar.gz
-  sha256: 1ecc4280b88d6a65c7fcde695f991ac28e3b54ce41d83ab3fffddfb3d5764a11
+  sha256: ad261d3df0a2761f060cdcbf20c926857f1d5a1862d8b8679433284dd1f2e1cd
   patches:
     - if: win
       then: 0001-Update-disc_win32.c.patch
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
     - if: win
       then: ninja
-    - if: not win
-      then: make
+      else: make
     - cmake
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
@@ -41,12 +40,10 @@ tests:
       - if: unix
         then: test -f "${PREFIX}/include/discid/discid.h"
       - if: win
-        then: if not exist %LIBRARY_LIB%\discid.lib exit 1
-      - if: win
-        then: if not exist %LIBRARY_INC%\discid\discid.h exit 1
-      - if: win
-        then: if not exist %LIBRARY_BIN%\discid.dll exit 1
-
+        then:
+          - if not exist %LIBRARY_LIB%\discid.lib exit 1
+          - if not exist %LIBRARY_INC%\discid\discid.h exit 1
+          - if not exist %LIBRARY_BIN%\discid.dll exit 1
 about:
   license: LGPL-2.0-or-later
   license_file: COPYING
