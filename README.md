@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libdiscid-feeds
 
 Home: https://musicbrainz.org/doc/libdiscid
 
-Package license: LGPL-2.0-or-later
+Package license: LGPL-2.1-or-later
 
 Summary: A Library for creating MusicBrainz DiscIDs
 
