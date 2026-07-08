@@ -45,7 +45,7 @@ tests:
           - if not exist %LIBRARY_INC%\discid\discid.h exit 1
           - if not exist %LIBRARY_BIN%\discid.dll exit 1
 about:
-  license: LGPL-2.0-or-later
+  license: LGPL-2.1-or-later
   license_file: COPYING
   summary: A Library for creating MusicBrainz DiscIDs
   description: |
