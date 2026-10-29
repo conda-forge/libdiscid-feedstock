@@ -11,46 +11,32 @@ package:
 source:
   url: https://github.com/metabrainz/libdiscid/archive/v${{ version }}.tar.gz
   sha256: ad261d3df0a2761f060cdcbf20c926857f1d5a1862d8b8679433284dd1f2e1cd
-  patches:
-    - if: win
-      then: 0001-Update-disc_win32.c.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
-    - if: win
-      then: ninja
-      else: make
     - cmake
+    - ninja
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
-    - if: win
-      then: m2-patch
   run_exports:
-    - ${{ pin_subpackage('libdiscid', upper_bound='x.x') }}
+    - ${{ pin_subpackage(name, upper_bound='x.x') }}
 
 tests:
-  - script:
-      - if: linux
-        then: test -f "${PREFIX}/lib/libdiscid.so.0"
-      - if: osx
-        then: test -f "${PREFIX}/lib/libdiscid.dylib"
-      - if: unix
-        then: test -f "${PREFIX}/include/discid/discid.h"
-      - if: win
-        then:
-          - if not exist %LIBRARY_LIB%\discid.lib exit 1
-          - if not exist %LIBRARY_INC%\discid\discid.h exit 1
-          - if not exist %LIBRARY_BIN%\discid.dll exit 1
+  - package_contents:
+      lib:
+        - discid
+      include:
+        - discid/discid.h
+
 about:
   license: LGPL-2.1-or-later
   license_file: COPYING
   summary: A Library for creating MusicBrainz DiscIDs
   description: |
-    `libdiscid` is a C library for creating MusicBrainz and freedb disc IDs from audio CDs. It reads a CD's table of contents (TOC) and generates an identifier which can be used to lookup the CD at MusicBrainz. Additionally, it provides a submission URL for adding the disc ID to the database and gathers ISRCs and the MCN (=UPC/EAN) from disc.
-
+    `libdiscid` is a C library for creating MusicBrainz and freedb disc IDs from audio CDs. It reads a CD's table of contents (TOC) and generates an identifier which can be used to look up the CD at MusicBrainz. Additionally, it provides a submission URL for adding the disc ID to the database and gathers ISRCs and the MCN (=UPC/EAN) from disc.
 
   homepage: https://musicbrainz.org/doc/libdiscid
   repository: https://github.com/metabrainz/libdiscid
